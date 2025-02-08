@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "portfolio-manu-rodriguez",
+    "manu-rodriguez-dev": "portfolio-manu-rodriguez"
+  },
+  "targets": {},
+  "etags": {}
+}

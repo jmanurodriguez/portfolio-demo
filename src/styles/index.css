@@ -1,0 +1,60 @@
+@import './base.css';
+@import './components.css';
+@import './utilities.css';
+@import './animations.css';
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+  .carousel-container {
+    height: 200px;
+  }
+
+  .carousel-item {
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+  }
+
+  .project-buttons-container {
+    flex-direction: column;
+    height: auto;
+    gap: 0.5rem;
+  }
+}
+
+/* Mejoras para el rendimiento */
+@media (prefers-reduced-motion: reduce) {
+  .carousel-item {
+    animation: none;
+  }
+  
+  .animate-gradient-animation {
+    animation: none;
+  }
+}
+
+/* Optimizaciones para dispositivos táctiles */
+@media (hover: none) {
+  .carousel-item:hover {
+    transform: none;
+  }
+}
+
+/* Mejoras de accesibilidad */
+@media (prefers-contrast: more) {
+  .text-gray-300 {
+    color: #ffffff;
+  }
+}
+
+/* Estilos de impresión */
+@media print {
+  .no-print {
+    display: none;
+  }
+  
+  body {
+    color: #000;
+    background: #fff;
+  }
+}

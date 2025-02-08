@@ -1,0 +1,421 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Ajuste de la altura del carrusel para evitar colapsos */
+.carousel-container {
+  perspective: 800px;
+  width: 100%;
+  height: 300px; /* Altura ajustada */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  overflow: visible;
+}
+
+/* Cada tecnología representada por una tarjeta */
+.carousel-item {
+  width: 80px;
+  height: 80px;
+  background-color: #442222;
+  font-size: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-style: preserve-3d;
+  border-radius: 50%;
+  text-align: center;
+  cursor: pointer;
+  animation: Carrusel 10s linear infinite;
+  opacity: 0.9;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Keyframes para el movimiento del carrusel */
+@keyframes Carrusel {
+  from {
+    transform: rotateY(360deg) translateZ(300px);
+    z-index: 10;
+    opacity: 1;
+  }
+  50% {
+    z-index: -10;
+    opacity: 0.5;
+  }
+  to {
+    transform: rotateY(0deg) translateZ(300px);
+    z-index: 10;
+    opacity: 1;
+  }
+}
+
+/* Control de las tarjetas de tecnologías */
+#react {
+  background-color: #61dbfb;
+}
+
+#javascript {
+  background-color: #f7df1e;
+  animation-delay: -1s;
+}
+
+#html5 {
+  background-color: #e34c26;
+  animation-delay: -2s;
+}
+
+#css3 {
+  background-color: #1572b6;
+  animation-delay: -3s;
+}
+#cloudinary {
+  background-color: #1572b6;
+  animation-delay: -3s;
+}
+#typescript {
+  background-color: #3178c6;
+  animation-delay: -4s;
+}
+
+#bootstrap {
+  background-color: #7952b3;
+  animation-delay: -5s;
+}
+
+#tailwind {
+  background-color: #06b6d4;
+  animation-delay: -6s;
+}
+
+#firebase {
+  background-color: #ffca28;
+  animation-delay: -7s;
+}
+
+#figma {
+  background-color: #f24e1e;
+  animation-delay: -8s;
+}
+
+#canva {
+  background-color: #00c4cc;
+  animation-delay: -9s;
+}
+
+#git {
+  background-color: #f34f29;
+  animation-delay: -10s;
+}
+
+#github {
+  background-color: #333;
+  animation-delay: -11s;
+}
+
+#wordpress {
+  background-color: #21759b;
+  animation-delay: -12s;
+}
+
+/* Efecto hover */
+.carousel-item:hover {
+  transform: scale(1.2);
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Estilo del texto debajo del ícono */
+.carousel-item h3 {
+  color: white;
+  font-size: 12px;
+  font-family: 'Arial', sans-serif;
+  margin-top: 5px;
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 640px) {
+  .carousel-container {
+    height: 10; /* Ajustar la altura en pantallas pequeñas */
+  }
+
+  .carousel-item {
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+  }
+
+  /* Ajustar el tamaño del texto */
+  .carousel-item h3 {
+    font-size: 10px;
+  }
+}
+
+/* Estilos generales del sitio */
+body {
+  background-color: #0a0a23;
+  background-size: cover;
+  background-position: center;
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Estilo de los botones */
+button, a.btn-view {
+  padding: 10px 20px;
+  background-color: #7e5bef;
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover, a.btn-view:hover {
+  background-color: #6741d9;
+  transform: translateY(-3px);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Transición suave al hacer scroll en las secciones */
+section {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition: none !important;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Certificaciones */
+.cert-card {
+  background-color: #1f2937;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cert-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+.cert-thumbnail {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.cert-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.cert-card:hover .cert-thumbnail img {
+  transform: scale(1.05);
+}
+
+/* Texto en las certificaciones */
+.cert-info {
+  padding: 16px;
+  text-align: center;
+}
+
+.cert-info h3 {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.btn-view {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #3b82f6;
+  color: #ffffff;
+  border-radius: 8px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-view:hover {
+  background-color: #2563eb;
+}
+
+/* Transición suave y elegante */
+.cert-card.expanded {
+  transform: scale(1.1);
+  box-shadow: 0px 16px 32px rgba(0, 0, 0, 0.5);
+}
+
+/* Efecto de animación */
+.cert-card.expanded .cert-thumbnail img {
+  transform: scale(1.15);
+}
+
+.cert-info h3:hover {
+  color: #60a5fa;
+}
+
+/* Estilo para los botones de expandir y contraer */
+.experience-item span {
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Hover y transiciones */
+.experience-item:hover {
+  background-color: #3b3b3b;
+}
+
+/* Gradiente animado para el hero */
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient-animation {
+  background: linear-gradient(90deg, rgba(135,61,255,1) 0%, rgba(255,82,206,1) 100%);
+  background-size: 200% 200%;
+  animation: gradient-animation 5s ease infinite;
+}
+
+/* Animación de desvanecimiento de imagen */
+@keyframes image-fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-image-fade {
+  animation: image-fade 1s ease-in-out;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Para Safari y navegadores más antiguos */
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Añadir animaciones suaves */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Efectos Cyberpunk */
+.cyberpunk-glow {
+  text-shadow: 0 0 10px #ff00ff,
+               0 0 20px #ff00ff,
+               0 0 30px #ff00ff;
+}
+
+.cyberpunk-border {
+  border: 2px solid transparent;
+  background: linear-gradient(45deg, #ff00ff, #00ffff);
+  background-clip: padding-box;
+  position: relative;
+}
+
+.cyberpunk-border::after {
+  content: '';
+  position: absolute;
+  top: -2px; right: -2px; bottom: -2px; left: -2px;
+  background: linear-gradient(45deg, #ff00ff, #00ffff);
+  z-index: -1;
+  filter: blur(10px);
+}
+
+.cyberpunk-glitch {
+  animation: glitch 1s linear infinite;
+}
+
+@keyframes glitch {
+  2%, 64% {
+    transform: translate(2px,0) skew(0deg);
+  }
+  4%, 60% {
+    transform: translate(-2px,0) skew(0deg);
+  }
+  62% {
+    transform: translate(0,0) skew(5deg);
+  }
+}
+
+.neon-text {
+  animation: neon 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes neon {
+  from {
+    text-shadow: 0 0 10px #fff,
+                 0 0 20px #fff,
+                 0 0 30px #fff,
+                 0 0 40px #ff00ff,
+                 0 0 70px #ff00ff,
+                 0 0 80px #ff00ff,
+                 0 0 100px #ff00ff,
+                 0 0 150px #ff00ff;
+  }
+  to {
+    text-shadow: 0 0 5px #fff,
+                 0 0 10px #fff,
+                 0 0 15px #fff,
+                 0 0 20px #ff00ff,
+                 0 0 35px #ff00ff,
+                 0 0 40px #ff00ff,
+                 0 0 50px #ff00ff,
+                 0 0 75px #ff00ff;
+  }
+}
+
+/* Añadir después de los efectos cyberpunk existentes */
+
+@keyframes scan {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(1000%);
+  }
+}
+
+.animate-scan {
+  animation: scan 3s linear infinite;
+}

@@ -1,0 +1,67 @@
+@tailwind components;
+
+@layer components {
+  .project-card {
+    @apply bg-gray-800 rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105;
+  }
+
+  .project-image-container {
+    @apply relative h-48 overflow-hidden;
+  }
+
+  .project-content {
+    @apply p-6;
+  }
+
+  .project-title {
+    @apply text-xl font-bold text-white mb-2;
+  }
+
+  .project-description {
+    @apply text-gray-300 mb-4;
+  }
+
+  .project-tech-container {
+    @apply flex flex-wrap gap-2 mb-4;
+  }
+
+  .project-tech-tag {
+    @apply px-3 py-1 bg-gray-700 rounded-full text-sm text-white;
+  }
+
+  .project-buttons-container {
+    @apply flex gap-4 mt-auto h-10;
+  }
+
+  .project-button {
+    @apply flex-1 flex items-center justify-center px-4 py-2 text-white rounded-lg transition-colors duration-300;
+  }
+
+  .project-button-primary {
+    @apply project-button bg-purple-600 hover:bg-purple-700;
+  }
+
+  .project-button-secondary {
+    @apply project-button bg-pink-600 hover:bg-pink-700;
+  }
+
+  .carousel-container {
+    @apply perspective-800 w-full max-w-screen-xl h-[300px] relative flex justify-center mx-auto overflow-visible;
+  }
+
+  .carousel-item {
+    @apply w-20 h-20 bg-[#442222] text-4xl absolute top-1/2 left-1/2 transform-style-3d rounded-full text-center cursor-pointer opacity-90 transition-all duration-300;
+  }
+
+  .heading {
+    @apply font-grotesk font-light text-xs tracking-tagline uppercase;
+  }
+  
+  .quote {
+    @apply font-code text-lg leading-normal;
+  }
+  
+  .button {
+    @apply font-code text-xs font-bold uppercase tracking-wider;
+  }
+}
